@@ -1,369 +1,473 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Services -</title>
-  <meta name="description" content="Explore our comprehensive range of premium design and space planning services.">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <!-- Header -->
-  <header class="header">
-    <div class="container header-container">
-      <a href="index.html" class="logo">Surya Tech World </a>
-      
-      <nav class="nav-desktop">
-        <ul>
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="services.html" class="nav-link">Services</a></li>
-          <li><a href="facilities.html" class="nav-link">Facilities</a></li>
-          <li><a href="contact.html" class="nav-link">Contact</a></li>
-        </ul>
-      </nav>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="Expert phone repair services - Hardware, Software, and more. Fast, reliable repairs for all devices.">
+  <title>FixHub - Expert Phone Repair Services</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+   <style>
+     *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-      <button class="menu-btn" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+    :root {
+      --background: #ffffff;
+      --foreground: #0f172a;
+      --card: #ffffff;
+      --card-foreground: #0f172a;
+      --primary: #0080ff;
+      --primary-foreground: #ffffff;
+      --secondary: #f1f5f9;
+      --secondary-foreground: #1e293b;
+      --muted: #f1f5f9;
+      --muted-foreground: #64748b;
+      --border: #e2e8f0;
+      --service-card-bg: #f8fafc;
+      --service-card-border: #e2e8f0;
+      --placeholder-bg: #f1f5f9;
+      --placeholder-icon: #94a3b8;
+      --radius: 12px;
+      --shadow: 0 4px 20px rgba(0, 128, 255, 0.15);
+    }
 
-      <nav class="nav-mobile">
-        <ul>
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="services.html" class="nav-link">Services</a></li>
-          <li><a href="facilities.html" class="nav-link">Facilities</a></li>
-          <li><a href="contact.html" class="nav-link">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+    body {
+      font-family: 'Outfit', sans-serif;
+      background-color: var(--background);
+      color: var(--foreground);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
 
-  <!-- Page Hero -->
-  <section class="section page-hero">
-    <div class="container">
-      <p class="section-label">Our Expertise</p>
-      <h1 class="section-title">Services</h1>
-      <p class="section-description" style="margin: 0 auto;">
-        we give best services 
-      </p>
-    </div>
-  </section>
+    /* Page Title */
+    .page-title {
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 20px 16px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-<!-- Dropdown Section -->
-<section class="dropdown">  
-<div class="dropdown">
-      <div class="dropdown-btn" onclick="toggleDropdown()">--Select service type--</div>
-      <div class="dropdown-content" id="dropdown">
-        <input type="text" id="search" placeholder="Search ..." onkeyup="filterFunction()">
+    .page-title-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--primary);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary-foreground);
+    }
 
-        <label class="option-item">hardware services<input type="radio" name="service" onclick="selectOption(this)" value="Hardware services" data-link="hardware.html"></label>
-        <label class="option-item">software Services <input type="radio" name="service" onclick="selectOption(this)" value="software services" data-link="software.html"></label>
-        <label class="option-item">advance Services<input type="radio" name="service" onclick="selectOption(this)" value="advance services" data-link="advance.html"></label>
-      </div>
-      <style>
-        /* ===== Base ===== */
-body {
-  background: #f8f8f8;
-  font-family: "Segoe UI", Arial, sans-serif;
-}
+    .page-title-text {
+      font-weight: 600;
+      font-size: 18px;
+    }
 
-/* ===== Dropdown Container ===== */
-.dropdown {
-  width: 280px;
-  margin: 40px auto;
-  position: 1rem auto;
-}
+    /* Main Content */
+    .main {
+      max-width: 1500px;
+      margin: 0 auto;
+      padding: 24px 16px;
+    }
 
-/* ===== Button ===== */
-.dropdown-btn {
-  width: 100%;
-  background: #f5f5f0;           /* milky white */
-  color: #333;
-  padding: 14px;
-  border-radius: 8px;
-  border: 1px solid #e0e0dc;
-  cursor: pointer;
-  font-size: 15px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
-  transition: all 0.3s ease;
-}
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      margin-bottom: 32px;
+    }
 
-.dropdown-btn:hover {
-  background: #fdfdfd;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-}
+    .hero h1 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
 
-/* ===== Dropdown Panel ===== */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  max-height: 280px;
-  width: auto;
-  overflow-y: auto;
-  background: #fdfdfd;           /* soft milk */
-  border-radius: 10px;
-  border: 10x solid #ccc;
-  box-shadow: 0 12px 25px rgba(0,0,0,0.12);
-  z-index: 1000;
-  text-align: center;
-}
-.dropdown-content input[type="text"] {
-      width: auto;
-      padding: 10px;
-      margin: 10px auto;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      outline: none;
+    .hero p {
+      color: var(--muted-foreground);
+      font-size: 14px;
+  }  */
+
+    /* Toggle Menu */
+     .toggle-menu {
+      margin: 0 -16px 24px;
+      padding: 0 16px;
+      position: relative;
+    }
+
+    .toggle-scroll {
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      scroll-snap-type: x mandatory;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .toggle-scroll::-webkit-scrollbar {
+      display: none;
+    }
+
+    .toggle-btn {
+      flex-shrink: 0;
+      scroll-snap-align: start;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      border-radius: var(--radius);
+      font-weight: 500;
+      font-size: 14px;
+      border: 2px solid var(--border);
+      background: var(--card);
+      color: var(--foreground);
+      cursor: pointer;
+      transition: all 0.3s;
+      font-family: inherit;
+    }
+
+    .toggle-btn:hover {
+      border-color: rgba(0, 128, 255, 0.3);
+      background: var(--secondary);
+    }
+
+    .toggle-btn.active {
+      background: var(--primary);
+      color: var(--primary-foreground);
+      border-color: var(--primary);
+      box-shadow: var(--shadow);
+      transform: scale(1.02);
+    }
+
+    .toggle-btn .emoji {
+      font-size: 16px;
+    }
+
+    .toggle-fade {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 8px;
+      width: 32px;
+      background: linear-gradient(to left, var(--background), transparent);
+      pointer-events: none;
+    } 
+
+    /* Section Title */
+    .section-title {
+      margin-bottom: 16px;
+    }
+
+    .section-title h2 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 4px;
+      text-transform: capitalize;
+    }
+
+    .section-title p {
+      color: var(--muted-foreground);
+      font-size: 14px;
+    }
+
+    /* Services Grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    /* Service Card */
+    .service-card {
+      background: var(--service-card-bg);
+      border: 1px solid var(--service-card-border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: all 0.3s;
+      animation: fadeInUp 0.4s ease-out backwards;
+    }
+
+    .service-card:hover {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .service-card:active {
+      transform: translateY(0);
+    }
+
+    .card-image {
+      aspect-ratio: 4/3;
+      background: var(--placeholder-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card-image svg {
+      width: 48px;
+      height: 48px;
+      color: var(--placeholder-icon);
+    }
+
+    .card-content {
+      padding: 16px;
+    }
+
+    .card-content h3 {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .card-content p {
+      font-size: 12px;
+      color: var(--muted-foreground);
+      margin-bottom: 12px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .card-price {
       font-size: 15px;
-      display: block;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .card-link {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--primary);
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .card-link:hover {
+      opacity: 0.8;
+    }
+
+    /* CTA Section */
+    .cta {
+      margin-top: 32px;
+      padding: 24px;
+      background: var(--primary);
+      border-radius: 16px;
       text-align: center;
     }
 
-/* ===== Search Input ===== */
-#search {
-  width: auto;
-  padding: 12px;
-  border: none;
-  outline: none;
-  font-size: 14px;
-  background: #f5f5f0;
-  border-bottom: 1px solid #e6e6e0;
-}
-
-/* ===== Option Items ===== */
-.option-item {
-  display: flex;
-  align-items: center;
-  padding: 12px 14px;
-  cursor: pointer;
-  font-size: 14px;
-  color: #333;
-  transition: background 0.2s ease;
-}
-.option-item:last-child {
-      border-bottom: none;
-    }
-    .option-item:hover {
-      background: #f5f5f5;
-    }
-    .option-item input[type="radio"] {
-      accent-color: #007bff;
-      transform: scale(1.2);
+    .cta h3 {
+      color: var(--primary-foreground);
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 8px;
     }
 
-</style>
-<script>
-  function toggleDropdown() {
-      let dropdown = document.getElementById("dropdown");
-      dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+    .cta p {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 14px;
+      margin-bottom: 16px;
     }
-    function filterFunction() {
-      let input = document.getElementById("search").value.toUpperCase();
-      let items = document.querySelectorAll(".option-item");
-      items.forEach(item => {
-        let text = item.innerText.toUpperCase();
-        item.style.display = text.indexOf(input) > -1 ? "" : "none";
-      });
+
+    .cta-btn {
+      background: var(--background);
+      color: var(--foreground);
+      border: none;
+      padding: 12px 24px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      font-family: inherit;
+      transition: opacity 0.2s;
     }
-    function selectOption(el) {
-      document.querySelector(".dropdown-btn").innerText = el.value;
-      document.getElementById("dropdown").style.display = "none";
-      // Redirect to district page if needed
-      window.location.href = el.getAttribute("data-link");
+
+    .cta-btn:hover {
+      opacity: 0.9;
     }
-    window.onclick = function(event) {
-      if (!event.target.closest('.dropdown')) {
-        document.getElementById("dropdown").style.display = "none";
+
+    /* Footer */
+    .footer {
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 24px 16px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .footer p {
+      font-size: 12px;
+      color: var(--muted-foreground);
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
-</script>
 
-  <!-- Services List -->
-  <!-- <section class="section" style="padding-top: 0;">
-    <div class="container">
-      <div class="services-grid">
-        <div class="service-item">
-          <div class="service-number">
-            <span>01</span>
-          </div>
-          <div class="service-content">
-            <h2 class="service-title">Space Planning & Analysis</h2>
-            <p class="service-description">
-              Strategic spatial analysis and planning that optimizes flow, functionality, and aesthetic harmony. 
-              We study how spaces will be used and design layouts that enhance both productivity and comfort.
-            </p>
-            <div class="service-features">
-              <span class="service-feature">Flow Optimization</span>
-              <span class="service-feature">Zoning Strategy</span>
-              <span class="service-feature">Spatial Analysis</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="service-item">
-          <div class="service-number">
-            <span>02</span>
-          </div>
-          <div class="service-content">
-            <h2 class="service-title">Interior Design</h2>
-            <p class="service-description">
-              Curated design solutions that balance aesthetics with functionality. From concept development 
-              to material selection, we create cohesive interiors that reflect your unique vision.
-            </p>
-            <div class="service-features">
-              <span class="service-feature">Concept Development</span>
-              <span class="service-feature">Material Selection</span>
-              <span class="service-feature">Custom Furniture</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="service-item">
-          <div class="service-number">
-            <span>03</span>
-          </div>
-          <div class="service-content">
-            <h2 class="service-title">Lighting Design</h2>
-            <p class="service-description">
-              Thoughtful lighting schemes that enhance atmosphere and functionality. We design layered 
-              lighting solutions that adapt to different needs throughout the day.
-            </p>
-            <div class="service-features">
-              <span class="service-feature">Ambient Lighting</span>
-              <span class="service-feature">Task Lighting</span>
-              <span class="service-feature">Accent Features</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="service-item">
-          <div class="service-number">
-            <span></span>
-          </div>
-          <div class="service-content">
-            <h2 class="service-title">Project Management</h2>
-            <p class="service-description">
-              End-to-end project oversight ensuring seamless execution from concept to completion. 
-              We coordinate all aspects of the project, maintaining quality and timeline integrity.
-            </p>
-            <div class="service-features">
-              <span class="service-feature">Timeline Management</span>
-              <span class="service-feature">Vendor Coordination</span>
-              <span class="service-feature">Quality Control</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="service-item">
-          <div class="service-number">
-            <span>05</span>
-          </div>
-          <div class="service-content">
-            <h2 class="service-title">Consultation Services</h2>
-            <p class="service-description">
-              Expert guidance for clients who want professional insight while managing their own projects. 
-              We provide strategic advice, design direction, and problem-solving support.
-            </p>
-            <div class="service-features">
-              <span class="service-feature">Design Review</span>
-              <span class="service-feature">Strategic Advice</span>
-              <span class="service-feature">Problem Solving</span>
-            </div>
-          </div>
-        </div>
-      </div>
+    .fade-in {
+      animation: fadeInUp 0.4s ease-out;
+    }
+  </style>
+</head>
+<body>
+  <!-- Page Title -->
+  <div class="page-title">
+    <div class="page-title-icon">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect width="14" height="20" x="5" y="2" rx="2" ry="2"/>
+        <path d="M12 18h.01"/>
+      </svg>
     </div>
-  </section>
+    <span class="page-title-text">FixHub Services</span>
+  </div>
 
-  Process Section -->
-  <!-- <section class="section section-dark">
-    <div class="container">
-      <p class="section-label" style="color: hsla(var(--background), 0.6);">How We Work</p>
-      <h2 class="section-title">Our Process</h2>
-      <p class="section-description mb-8" style="color: hsla(var(--background), 0.7);">
-        A refined approach that ensures exceptional results at every stage.
-      </p>
-
-      <div class="process-grid" style="margin-top: 3rem;">
-        <div class="process-item">
-          <span class="process-number"></span>
-          <h3 class="process-title"></h3>
-          <p class="process-description">
-            Understanding your vision, requirements, and aspirations through in-depth consultation.
-          </p>
-        </div>
-        <div class="process-item">
-          <span class="process-number">02</span>
-          <h3 class="process-title">Concept</h3>
-          <p class="process-description">
-            Developing creative solutions that align with your goals and exceed expectations.
-          </p>
-        </div>
-        <div class="process-item">
-          <span class="process-number">03</span>
-          <h3 class="process-title">Design</h3>
-          <p class="process-description">
-            Refining every detail to create cohesive, functional, and beautiful spaces.
-          </p>
-        </div>
-        <div class="process-item">
-          <span class="process-number">04</span>
-          <h3 class="process-title">Delivery</h3>
-          <p class="process-description">
-            Executing with precision to bring your vision to life, on time and beyond expectations.
-          </p>
-        </div>
+  <!-- Main Content -->
+  <main class="main">
+    <!-- Toggle Menu -->
+    <section class="toggle-menu">
+      <div class="toggle-scroll">
+        <button class="toggle-btn active" data-tab="hardware">
+          <span class="emoji">🔧</span>
+          <span>Hardware</span>
+        </button>
+        <button class="toggle-btn" data-tab="software">
+          <span class="emoji">💻</span>
+          <span>Software</span>
+        </button>
+        <button class="toggle-btn" data-tab="others">
+          <span class="emoji">📦</span>
+          <span>Others</span>
+        </button>
       </div>
-    </div>
-  </section> -->
+      <div class="toggle-fade"></div>
+    </section>
 
-  <!-- CTA Section -->
-  <section class="cta section-light">
-    <h2 class="cta-title" style="color: hsl(var(--foreground));">Let's give a life to your device</h2>
-    <p class="cta-description" style="color: hsl(var(--muted-foreground));">
-      Ready to transform your Phone.
-    </p>
-    <a href="contact.html" class="btn btn-primary">service your phone now</a>
-  </section>
+    <!-- Section Title -->
+    <section class="section-title">
+      <h2 id="sectionTitle">Hardware Services</h2>
+      <p>Select a service to book your repair</p>
+    </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="index.html" class="logo">Surya Tech World</a>
-          <p>Premium spaces designed for exceptional experiences. Where sophistication meets functionality.</p>
-        </div>
+    <!-- Services Grid -->
+    <section class="services-grid" id="servicesGrid">
+      <!-- Services will be injected here by JavaScript -->
+    </section>
+  </main>
 
-        <div>
-          <h4 class="footer-title">Navigate</h4>
-          <div class="footer-links">
-            <a href="index.html" class="footer-link">Home</a>
-            <a href="services.html" class="footer-link">Services</a>
-            <a href="facilities.html" class="footer-link">Facilities</a>
-            <a href="contact.html" class="footer-link">Contact</a>
+  <script>
+    // Services Data
+    const services = {
+      hardware: [
+        { title: "Display Change", description: "Screen replacement for cracked or damaged displays", icon: "monitor", price: "$49" },
+        { title: "Battery Replacement", description: "New battery for extended phone life", icon: "battery", price: "$29" },
+        { title: "Charging Port", description: "Fix charging issues and port replacement", icon: "zap", price: "$35" },
+        { title: "Motherboard Repair", description: "Circuit board repair and component fixing", icon: "cpu", price: "$79" },
+        { title: "WiFi/Bluetooth", description: "Connectivity module repair and replacement", icon: "wifi", price: "$45" },
+        { title: "Speaker Repair", description: "Audio component replacement and fixing", icon: "speaker", price: "$25" }
+      ],
+      software: [
+        { title: "OS Installation", description: "Fresh operating system installation", icon: "code", price: "$25" },
+        { title: "Virus Removal", description: "Complete malware and virus cleanup", icon: "shield", price: "$35" },
+        { title: "Data Recovery", description: "Recover lost files and photos", icon: "database", price: "$55" },
+        { title: "Software Update", description: "Update apps and system software", icon: "code", price: "$15" },
+        { title: "Backup Service", description: "Complete data backup solution", icon: "harddrive", price: "$20" },
+        { title: "Security Setup", description: "Antivirus and security configuration", icon: "shield", price: "$30" }
+      ],
+      others: [
+        { title: "Phone Unlocking", description: "Carrier unlock and IMEI services", icon: "phone", price: "$40" },
+        { title: "Water Damage", description: "Liquid damage diagnosis and repair", icon: "wrench", price: "$65" },
+        { title: "Diagnostic Check", description: "Complete device health check", icon: "wrench", price: "$15" },
+        { title: "Data Transfer", description: "Move data to your new device", icon: "database", price: "$25" },
+        { title: "Accessory Install", description: "Screen protector and case installation", icon: "phone", price: "$10" },
+        { title: "Express Repair", description: "Same-day priority service", icon: "zap", price: "+$20" }
+      ]
+    };
+
+    // SVG Icons
+    const icons = {
+      monitor: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>',
+      battery: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="10" x="2" y="7" rx="2" ry="2"/><line x1="22" x2="22" y1="11" y2="13"/></svg>',
+      zap: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>',
+      cpu: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg>',
+      wifi: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13a10 10 0 0 1 14 0"/><path d="M8.5 16.5a5 5 0 0 1 7 0"/><path d="M2 8.82a15 15 0 0 1 20 0"/><line x1="12" x2="12.01" y1="20" y2="20"/></svg>',
+      speaker: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>',
+      code: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>',
+      shield: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
+      database: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg>',
+      harddrive: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" x2="2" y1="12" y2="12"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/><line x1="6" x2="6.01" y1="16" y2="16"/><line x1="10" x2="10.01" y1="16" y2="16"/></svg>',
+      phone: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>',
+      wrench: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>'
+    };
+
+    // DOM Elements
+    const toggleBtns = document.querySelectorAll('.toggle-btn');
+    const sectionTitle = document.getElementById('sectionTitle');
+    const servicesGrid = document.getElementById('servicesGrid');
+
+    // Tab switching
+    let activeTab = 'hardware';
+
+    function renderServices(tab) {
+      const serviceList = services[tab];
+      servicesGrid.innerHTML = serviceList.map((service, index) => `
+        <div class="service-card" style="animation-delay: ${index * 50}ms">
+          <div class="card-image">
+            ${icons[service.icon] || icons.phone}
+          </div>
+          <div class="card-content">
+            <h3>${service.title}</h3>
+            <p>${service.description}</p>
+            <div class="card-footer">
+              <span class="card-price">From ${service.price}</span>
+              <a href="#" class="card-link">Book Now →</a>
+            </div>
           </div>
         </div>
+      `).join('');
+    }
 
-        <div class="footer-contact">
-          <h4 class="footer-title">Contact</h4>
-          <p>suryatechworld24@gmail.com</p>
-          <p>9353010672</p>
-          <p>#31,highpark First Floor,Devraj Urs Road<br>mysore ,karnataka</p>
-        </div>
-      </div>
+    toggleBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tab = btn.dataset.tab;
+        if (tab === activeTab) return;
 
-      <div class="footer-bottom">
-        <p>&copy; 2026 Surya Tech World. All rights reserved.</p>
-        <div class="footer-legal">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+        // Update active button
+        toggleBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
 
-  <script src="main.js"></script>
+        // Update title
+        sectionTitle.textContent = `${tab.charAt(0).toUpperCase() + tab.slice(1)} Services`;
+
+        // Render new services
+        activeTab = tab;
+        renderServices(tab);
+      });
+    });
+
+    // Initial render
+    renderServices('hardware');
+  </script>
 </body>
 </html>
