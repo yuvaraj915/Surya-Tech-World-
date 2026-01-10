@@ -170,7 +170,7 @@ img {
 
 /* Mobile Navigation */
 .nav-mobile {
-  position: fixed;
+  position: relative;
   top: 0;
   right: -100%;
   width: 100%;
@@ -1078,6 +1078,7 @@ body {
   background: #d8d8d0;
   border-radius: 10px;
 }
+
 
 
 
