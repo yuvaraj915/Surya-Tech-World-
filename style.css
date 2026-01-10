@@ -183,9 +183,9 @@ img {
   justify-content: left;
   padding: 2rem;
 }
-
-
-
+.nav-mobile.active {
+  right: 0;
+}
 .nav-mobile ul {
   display: flex;
   flex-direction: column;
@@ -1076,6 +1076,7 @@ body {
   background: #d8d8d0;
   border-radius: 10px;
 }
+
 
 
 
