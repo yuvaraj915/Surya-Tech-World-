@@ -262,7 +262,7 @@ img {
  /* background-image: url('website.avif');  */
 
   color: hsl(var(--background));
-background: linear-gradient(90deg, #00f5ff, #6a00ff, #ff00ff);
+background: white;
 
   padding: 6rem 1.5rem;
   text-align: center;
@@ -1078,6 +1078,7 @@ body {
   background: #d8d8d0;
   border-radius: 10px;
 }
+
 
 
 
