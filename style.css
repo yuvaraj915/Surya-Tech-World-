@@ -25,12 +25,15 @@
 html {
   scroll-behavior: smooth;
 }
- .social-icons img {
-      width: 20px;
-      margin: 5px;
+.social-icons {
+      display: flex;          /* makes items horizontal */
+      align-items: center;    /* vertical center */
+      gap: 15px;              /* space between logos */
+    }
+
+    .social-icons img {
+      width: 30px;
       cursor: pointer;
-      display: flex;
-      gap: 15px;
     }
 
 body {
@@ -1083,6 +1086,7 @@ body {
   background: #d8d8d0;
   border-radius: 10px;
 }
+
 
 
 
