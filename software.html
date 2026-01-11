@@ -3,23 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Software Services</title>
-   
-</head>
-<style>
-   h1{
-        font-family: playfair display,serif;
-      font-weight: 400;
-      letter-spacing: 1px;
+  <title>Software Services</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
     }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+    }
+
+   
+    /* Search section */
+    .search-container {
+      display: flex;
+      justify-content: right;
+      gap: 10px;
+      margin: 20px 0;
+    }
+
+    #searchBox {
+      padding: 10px;
+      width: 260px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    #searchBtn {
+      padding: 10px 18px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      background-color: #00aa88;
+      color: white;
+      cursor: pointer;
+    }
+
+    #searchBtn:hover {
+      background-color: #008f73;
+    }
+
     .tour-row {
       display: flex;
       justify-content: center;
       margin-bottom: 30px;
-    }
-
-    .row-even {
-      flex-direction: row-reverse;
     }
 
     .tour-card {
@@ -28,7 +60,6 @@
       border-radius: 16px;
       overflow: hidden;
       box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-      margin: 0 20px;
     }
 
     .image-container {
@@ -47,7 +78,6 @@
       right: 8px;
       display: flex;
       justify-content: space-between;
-      pointer-events: none;
     }
 
     .badge {
@@ -72,96 +102,107 @@
 
     .title {
       font-size: 18px;
-      margin: 4px 0 8px;
+      margin: 6px 0 0;
     }
-    </style>
+  </style>
+</head>
+
 <body>
-    <header>
-        <img src="newlogo (2).jpeg" alt="Logo" width="80" height="80">
-        <h1 style="text-align: center;">Software Services</h1>
-    </header>
-    <main>
 
-         <div class="tour-row row-odd">
-      <div class="tour-card">
-        <div class="image-container">
-          <img src="newlogo (2).jpeg" alt="image" class="tour-image">
-          </a>
-          <div class="top-overlay">
-            <span class="badge">Surya Tech World</span>
-          </div>
-        </div>
-        <div class="tour-info">
-          <p class="state">Software Related</p>
-          <h3 class="title">Software Currupt Problem</h3>
+<header>
+  <img src="techlogo.jpeg" alt="Logo" width="80" height="80">
+  
+</header>
+<h1 style="text-align: center; font-family: playfair display, serif;">Software Services</h1>
+
+<!-- Search Box + Button -->
+<div class="search-container">
+  <input
+    type="text"
+    id="searchBox"
+    placeholder="Search services..."
+    onkeyup="searchCards()"
+  >
+  <button id="searchBtn" onclick="searchCards()">Search</button>
+</div>
+
+
+<main>
+
+  <div class="tour-row">
+    <div class="tour-card">
+      <div class="image-container">
+        <img src="newlogo (2).jpeg" class="tour-image">
+        <div class="top-overlay">
+          <span class="badge">Surya Tech World</span>
         </div>
       </div>
-    </div>
-
-    <div class="tour-row row-odd">
-      <div class="tour-card">
-        <div class="image-container">
-          <img src="newlogo (2).jpeg" alt="image" class="tour-image">
-          </a>
-          <div class="top-overlay">
-            <span class="badge">Surya Tech World</span>
-          </div>
-        </div>
-        <div class="tour-info">
-          <p class="state">Software Related</p>
-          <h3 class="title">Hanging Problem</h3>
-        </div>
+      <div class="tour-info">
+        <p class="state">Software Related</p>
+        <h3 class="title">Software Corrupt Problem</h3>
       </div>
     </div>
-    <div class="tour-row row-odd">
-      <div class="tour-card">
-        <div class="image-container">
-          <img src="newlogo (2).jpeg" alt="image" class="tour-image">
-          </a>
-          <div class="top-overlay">
-            <span class="badge">Surya Tech World</span>
-          </div>
-        </div>
-        <div class="tour-info">
-          <p class="state">Software Related</p>
-          <h3 class="title">Software Update</h3>
+  </div>
+
+  <div class="tour-row">
+    <div class="tour-card">
+      <div class="image-container">
+        <img src="newlogo (2).jpeg" class="tour-image">
+        <div class="top-overlay">
+          <span class="badge">Surya Tech World</span>
         </div>
       </div>
-    </div>
-    <div class="tour-row row-odd">
-      <div class="tour-card">
-        <div class="image-container">
-          <img src="newlogo (2).jpeg" alt="image" class="tour-image">
-          </a>
-          <div class="top-overlay">
-            <span class="badge">Surya Tech World</span>
-          </div>
-        </div>
-        <div class="tour-info">
-          <p class="state">Software Related</p>
-          <h3 class="title">Mobile Slow Running Problem</h3>
-        </div>
+      <div class="tour-info">
+        <p class="state">Software Related</p>
+        <h3 class="title">Hanging Problem</h3>
       </div>
     </div>
-    <div class="tour-row row-odd">
-      <div class="tour-card">
-        <div class="image-container">
-          <img src="newlogo (2).jpeg" alt="image" class="tour-image">
-          </a>
-          <div class="top-overlay">
-            <span class="badge">Surya Tech World</span>
-          </div>
-        </div>
-        <div class="tour-info">
-          <p class="state">Software Related</p>
-          <h3 class="title">Other</h3>
+  </div>
+
+  <div class="tour-row">
+    <div class="tour-card">
+      <div class="image-container">
+        <img src="newlogo (2).jpeg" class="tour-image">
+        <div class="top-overlay">
+          <span class="badge">Surya Tech World</span>
         </div>
       </div>
+      <div class="tour-info">
+        <p class="state">Software Related</p>
+        <h3 class="title">Software Update</h3>
+      </div>
     </div>
+  </div>
 
-       </main>
-        </body>
-        </html>
+  <div class="tour-row">
+    <div class="tour-card">
+      <div class="image-container">
+        <img src="newlogo (2).jpeg" class="tour-image">
+        <div class="top-overlay">
+          <span class="badge">Surya Tech World</span>
+        </div>
+      </div>
+      <div class="tour-info">
+        <p class="state">Software Related</p>
+        <h3 class="title">Mobile Slow Running Problem</h3>
+      </div>
+    </div>
+  </div>
 
-       
+</main>
 
+<!-- Search Script -->
+<script>
+function searchCards() {
+  const input = document.getElementById("searchBox").value.toLowerCase();
+  const rows = document.querySelectorAll(".tour-row");
+
+  rows.forEach(row => {
+    const text = row.innerText.toLowerCase();
+    row.style.display = text.includes(input) ? "flex" : "none";
+  });
+}
+</script>
+
+</body>
+</html>
