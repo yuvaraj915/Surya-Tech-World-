@@ -52,26 +52,33 @@
     </div>
   </section>
   <style>
-  
-  .button-container {
+
+
+   .button-wrapper{
     display: flex;
-    gap: 20px;
     justify-content: center;
+    align-items: center;
+   } 
+  .button-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 buttons per row */
+    gap: 20px;
+    width: 320px;
   }
 
   .service-btn {
-    padding: 15px 25px;
+    padding: 15px;
     font-size: 16px;
     font-weight: bold;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: 0.3s ease;
     color: white;
+    transition: 0.3s ease;
   }
 
   .software {
-    background-color: black;
+    background-color:black;
   }
 
   .hardware {
@@ -82,12 +89,17 @@
     background-color: black;
   }
 
+  .other {
+    background-color: black;
+  }
+
   .service-btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 15px rgba(0,0,0,0.2);
     opacity: 0.9;
   }
 </style>
+<div class="button-wrapper">
 <div class="button-container">
   <a href="software.html">
   <button class="service-btn software">Software Services</button>
@@ -99,8 +111,9 @@
   <button class="service-btn advanced">Advanced Services</button>
   </a>
   <a href="other.html">
-  <button class="service-btn advanced">Other Services</button>
+  <button class="service-btn advanced">Other's  Services</button>
   </a>
+</div>
 </div>
 
   
@@ -154,4 +167,3 @@
   <script src="main.js"></script>
 </body>
 </html>
-
