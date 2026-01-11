@@ -26,9 +26,11 @@ html {
   scroll-behavior: smooth;
 }
  .social-icons img {
-      width: 40px;
-      margin: 10px;
+      width: 20px;
+      margin: 5px;
       cursor: pointer;
+      display: flex;
+      gap: 15px;
     }
 
 body {
@@ -1081,6 +1083,7 @@ body {
   background: #d8d8d0;
   border-radius: 10px;
 }
+
 
 
 
