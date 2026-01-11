@@ -25,17 +25,18 @@
 html {
   scroll-behavior: smooth;
 }
-.social-icons {
-      display: flex;          /* makes items horizontal */
-      align-items: center;    /* vertical center */
-      gap: 15px;              /* space between logos */
+ .logo-row {
+      display: flex;
+      flex-direction: row;      /* single row */
+      align-items: center;
+      gap: 15px;                /* space between logos */
+        /* center aligned */
     }
 
-    .social-icons img {
+    .logo-row img {
       width: 30px;
       cursor: pointer;
     }
-
 body {
   font-family: var(--font-body);
   background-color: hsl(var(--background));
@@ -1086,6 +1087,7 @@ body {
   background: #d8d8d0;
   border-radius: 10px;
 }
+
 
 
 
