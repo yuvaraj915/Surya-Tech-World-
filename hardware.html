@@ -7,10 +7,47 @@
    
 </head>
 <style>
-   h1{
-        font-family: playfair display,serif;
-      font-weight: 400;
-      letter-spacing: 1px;
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+    }
+
+
+    /* Search section */
+    .search-container {
+      display: flex;
+      justify-content: right;
+      gap: 10px;
+      margin: 20px 0;
+    }
+
+    #searchBox {
+      padding: 10px;
+      width: 260px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    #searchBtn {
+      padding: 10px 18px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      background-color: #00aa88;
+      color: white;
+      cursor: pointer;
+    }
+
+    #searchBtn:hover {
+      background-color: #008f73;
     }
     .tour-row {
       display: flex;
@@ -77,11 +114,22 @@
     </style>
 <body>
     <header>
-        <img src="newlogo (2).jpeg" alt="Logo" width="80" height="80">
-        <h1 style="text-align: center;">Hardware Services</h1>
+        <img src="c:\Users\HP NoteBook\Downloads\techlogo.jpeg" alt="Logo" width="80" height="80">
+        
     </header>
-    <main>
-        <h1 style="text-align: center">DISPLAY RELATED SERVICES</h1>
+    <h1 style="text-align: center; font-family: playfair display, serif;">Hardware Services</h1>
+       
+        <div class="search-container">
+  <input type="text"
+    id="searchBox"
+    placeholder="Search services..."
+    onkeyup="searchCards()"
+  >
+  <button id="searchBtn" onclick="searchCards()">Search</button>
+</div>
+ 
+
+<main>
 
   <div class="tour-row row-odd">
       <div class="tour-card">
@@ -109,7 +157,7 @@
         </div>
         <div class="tour-info">
           <p class="state">Disply related</p>
-          <h3 class="title">Touch Glass Replacement</h3>
+          <h3 class="title">Tech Glass Replacement</h3>
         </div>
       </div>
     </div>
@@ -124,7 +172,7 @@
         </div>
         <div class="tour-info">
           <p class="state">Disply related</p>
-          <h3 class="title">Middle Frame Replacement</h3>
+          <h3 class="title">Medal Frame Replacement</h3>
         </div>
       </div>
     </div>
@@ -143,7 +191,7 @@
         </div>
       </div>
     </div>
-    <h1 style="text-align: center">BATTERY & CHARGING RELATED SERVICES</h1>
+   
     
     <div class="tour-row row-odd">
       <div class="tour-card">
@@ -201,11 +249,11 @@
         </div>
         <div class="tour-info">
           <p class="state">Battery & Charging Related</p>
-          <h3 class="title">Charging Strip Replacement</h3>
+          <h3 class="title">Charging Stripe Replacement</h3>
         </div>
       </div>
     </div>
-    <h1 style="text-align: center">SOUNDS RELATED SERVICES</h1>
+    
     <div class="tour-row row-odd">
       <div class="tour-card">
         <div class="image-container">
@@ -233,7 +281,7 @@
         </div>
         <div class="tour-info">
           <p class="state">Sounds Related</p>
-          <h3 class="title">Ear Speaker Replacement</h3>
+          <h3 class="title">Air Speaker Replacement</h3>
         </div>
       </div>
     </div>
@@ -269,8 +317,7 @@
         </div>
       </div>
     </div>
-    <h1 style="text-align: center">NETWORK RELATED SERVICES</h1>
-
+   
     <div class="tour-row row-odd">
       <div class="tour-card">
         <div class="image-container">
@@ -318,7 +365,7 @@
         </div>
       </div>
     </div>
-       <div class="tour-row row-odd">
+    <div class="tour-row row-odd">
       <div class="tour-card">
         <div class="image-container">
           <img src="newlogo (2).jpeg" alt="image" class="tour-image">
@@ -409,13 +456,20 @@
         </div>
       </div>
     </div>
+</main>
+    <script>
+function searchCards() {
+  const input = document.getElementById("searchBox").value.toLowerCase();
+  const rows = document.querySelectorAll(".tour-row");
 
+  rows.forEach(row => {
+    const text = row.innerText.toLowerCase();
+    row.style.display = text.includes(input) ? "flex" : "none";
+  });
+}
+</script>
         
-        </main>
+
         </body>
         </html>
-
        
-
-
-
