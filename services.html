@@ -54,27 +54,32 @@
   <style>
 
 
-
-    
-  .button-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 buttons per row */
-    gap: 20px;
-    width: 320px;
-  }
+   .button-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   } 
+    .button-container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
 
   .service-btn {
     padding: 15px;
-    font-size: 12px;
+    font-size: 11px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     color: white;
     transition: 0.3s ease;
     font-family: montserrat,sans-serif;
-    font-weight: 500;
+    font-weight: 300;
     letter-spacing: 2px;
     text-transform: uppercase;
+  
     
   }
 
@@ -100,7 +105,7 @@
     opacity: 0.9;
   }
 </style>
-
+<div class="button-wrapper">
 <div class="button-container">
   <a href="software.html">
   <button class="service-btn software">SOFTWARE SERVICES</button>
@@ -111,9 +116,9 @@
     <a href="advance.html">
   <button class="service-btn advanced">ADVANCED SERVICES</button>
   </a>
-    </a>
+ 
 </div>
-
+</div>
 
   
   
@@ -166,7 +171,3 @@
   <script src="main.js"></script>
 </body>
 </html>
-
-
-
-
